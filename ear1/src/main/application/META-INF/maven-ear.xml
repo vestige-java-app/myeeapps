@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mavenEAR xmlns="http://gaellalire.fr/MAVEN_EAR" xsi:schemaLocation="http://gaellalire.fr/MAVEN_EAR maven-ear-1.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <bundleMapping>
+    <bundleFileName>war1.war</bundleFileName>
+    <groupId>${project.groupId}</groupId>
+    <artifactId>myeeapps-war1</artifactId>
+  </bundleMapping>
+  <bundleMapping>
+    <bundleFileName>war2.war</bundleFileName>
+    <groupId>${project.groupId}</groupId>
+    <artifactId>myeeapps-war2</artifactId>
+  </bundleMapping>
+  <bundleMapping>
+    <bundleFileName>ejb1.jar</bundleFileName>
+    <groupId>${project.groupId}</groupId>
+    <artifactId>myeeapps-ejb1</artifactId>
+  </bundleMapping>
+  <bundleMapping>
+    <bundleFileName>ejb2.jar</bundleFileName>
+    <groupId>${project.groupId}</groupId>
+    <artifactId>myeeapps-ejb2</artifactId>
+  </bundleMapping>
+</mavenEAR>
+
