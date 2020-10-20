@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mavenEAR xmlns="http://gaellalire.fr/MAVEN_EAR" xsi:schemaLocation="http://gaellalire.fr/MAVEN_EAR maven-ear-1.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<mavenEAR xmlns="http://maven.apache.org/MAVEN_EAR" xsi:schemaLocation="http://maven.apache.org/MAVEN_EAR maven-ear-1.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <bundleMapping>
     <bundleFileName>war1.war</bundleFileName>
     <groupId>${project.groupId}</groupId>
