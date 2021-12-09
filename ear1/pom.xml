@@ -5,7 +5,7 @@
   <parent>
     <groupId>fr.gaellalire.vestige_app.myeeapps</groupId>
     <artifactId>myeeapps</artifactId>
-    <version>0.0.1</version>
+    <version>1.0.0-SNAPSHOT</version>
   </parent>
   <artifactId>myeeapps-ear1</artifactId>
   <packaging>ear</packaging>
@@ -55,10 +55,8 @@
           <filtering>true</filtering>
 <!--           <version>5</version> -->
 <!--           <unpackTypes>war</unpackTypes> -->
-<!--           <defaultLibBundleDir>lib</defaultLibBundleDir> -->
-<!--           <skinnyWars>true</skinnyWars> -->
-          <packagingExcludes>**/*.jar,**/*.war</packagingExcludes>
-<!--           <packagingExcludes>liba/javax*</packagingExcludes> -->
+          <defaultLibBundleDir>lib</defaultLibBundleDir>
+          <skinnyWars>true</skinnyWars>
           <modules>
             <webModule>
               <groupId>${project.groupId}</groupId>
@@ -84,6 +82,17 @@
             </ejbModule>
           </modules>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>fr.gaellalire</groupId>
+        <artifactId>jar_exploder_plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>explode-jar</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>

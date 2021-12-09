@@ -5,7 +5,7 @@
   <parent>
     <groupId>fr.gaellalire.vestige_app.myeeapps</groupId>
     <artifactId>myeeapps</artifactId>
-    <version>0.0.1</version>
+    <version>1.0.0-SNAPSHOT</version>
   </parent>
   <artifactId>myeeapps-ejb1</artifactId>
   <packaging>ejb</packaging>

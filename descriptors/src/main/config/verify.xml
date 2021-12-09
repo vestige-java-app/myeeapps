@@ -1,0 +1,12 @@
+<verify xmlns="http://gaellalire.fr/vestige/VERIFY" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://gaellalire.fr/vestige/VERIFY http://gaellalire.fr/vestige/verify-1.2.0.xsd">
+  <attachment>
+    <mavenResolver groupId="${project.groupId}" artifactId="myeeapps-ear1" version="${project.version}" extension="ear" classifier="exploded-assembly" />
+  </attachment>
+  <configurations>
+    <mavenConfig>
+      <setClassifierToExtension extension="war" classifier="exploded-assembly"/>
+      <additionalRepository id="gaellalire-repo" url="https://gaellalire.fr/maven/repository/" />           
+    </mavenConfig>
+  </configurations>
+</verify>
