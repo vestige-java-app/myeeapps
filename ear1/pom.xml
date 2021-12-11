@@ -9,7 +9,7 @@
   </parent>
   <artifactId>myeeapps-ear1</artifactId>
   <packaging>ear</packaging>
-  
+
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>
@@ -35,14 +35,25 @@
       <version>${project.version}</version>
       <type>war</type>
     </dependency>
-    
-    
+
+
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
       <version>3.1.0</version>
     </dependency>
-    
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient</artifactId>
+      <version>4.5.13</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.apache.httpcomponents</groupId>
+          <artifactId>httpcore</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
   </dependencies>
 
   <build>
@@ -53,8 +64,8 @@
         <version>3.0.1</version>
         <configuration>
           <filtering>true</filtering>
-<!--           <version>5</version> -->
-<!--           <unpackTypes>war</unpackTypes> -->
+          <!-- <version>5</version> -->
+          <!-- <unpackTypes>war</unpackTypes> -->
           <defaultLibBundleDir>lib</defaultLibBundleDir>
           <skinnyWars>true</skinnyWars>
           <modules>

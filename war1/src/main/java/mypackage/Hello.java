@@ -1,7 +1,11 @@
 package mypackage;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.util.Arrays;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -10,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import ejb1.LocalEJB1;
 import ejb1.RemoteEJB1;
@@ -24,14 +29,27 @@ public class Hello extends HttpServlet {
     @EJB
     private RemoteEJB1 remoteEjb1;
 
+    @SuppressWarnings("unchecked")
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter writer = resp.getWriter();
-        writer.println("hello");
-        try {
-            writer.println(IOUtils.class);
-        } catch (Exception e) {
-            writer.println("no deps");
+        writer.println("hello war1");
+        writer.println();
+        
+        for (Class<?> c : Arrays.asList(IOUtils.class, StringUtils.class, localEjb1.getClass())) {
+            writer.println(c);
+            writer.println(Hello.class.getClassLoader().getResource(c.getName().replace('.', '/').concat(".class")));
+            ClassLoader classLoader = c.getClassLoader();
+            writer.println(System.identityHashCode(classLoader) + " " + classLoader);
+            writer.println();
+        }
+        InputStream inputStream = Hello.class.getResourceAsStream("myresource.txt");
+        if (inputStream != null) {
+            try {
+                writer.println(new BufferedReader(new InputStreamReader(inputStream)).readLine());
+            } finally {
+                inputStream.close();
+            }
         }
 
         long[] times = new long[5000];
@@ -54,21 +72,6 @@ public class Hello extends HttpServlet {
         StatPrinter.stat(times);
 
         System.out.println("end of get");
-    }
-
-    public static void main(String[] args) {
-        System.out.println(System.getProperty("java.class.path"));
-        System.out.println(Hello.class.getResource("a.txt"));
-        System.out.println(Hello.class.getResource(""));
-        System.out.println(Hello.class.getResource("/"));
-        System.out.println(Hello.class.getClassLoader().getResource(""));
-        System.out.println(Hello.class.getResource("."));
-        System.out.println(Hello.class.getResource("/."));
-        System.out.println(Hello.class.getClassLoader().getResource("."));
-
-        System.out.println(ClassLoader.getSystemClassLoader().getResource(""));
-        System.out.println(ClassLoader.getSystemClassLoader().getResource("."));
-
     }
 
 }
