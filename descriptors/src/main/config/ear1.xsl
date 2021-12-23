@@ -13,6 +13,10 @@
           <xsl:attribute name="artifactId"><xsl:value-of select="/verificationMetadatas/verificationMetadata/@artifactId" /></xsl:attribute>
           <xsl:attribute name="version"><xsl:value-of select="/verificationMetadatas/verificationMetadata/@version" /></xsl:attribute>
           <xsl:attribute name="classifier"><xsl:value-of select="/verificationMetadatas/verificationMetadata/@classifier" /></xsl:attribute>
+          <attachDependencies>
+            <excludeWithParents groupId="fr.gaellalire.vestige_app.myeeapps" artifactId="myeeapps-ejb1"/>
+            <excludeWithParents groupId="fr.gaellalire.vestige_app.myeeapps" artifactId="myeeapps-ejb2"/>
+          </attachDependencies>
         </xsl:element>
         <verificationMetadata>
           <text>
@@ -28,6 +32,9 @@
               <xsl:attribute name="artifactId"><xsl:value-of select="@artifactId" /></xsl:attribute>
               <xsl:attribute name="version"><xsl:value-of select="@version" /></xsl:attribute>
               <xsl:attribute name="classifier"><xsl:value-of select="@classifier" /></xsl:attribute>
+              <attachDependencies>
+                <excludeWithParents groupId="javax" artifactId="javaee-api"/>
+              </attachDependencies>
             </xsl:element>
             <verificationMetadata>
               <text>

@@ -22,12 +22,12 @@
         <plugin>
           <groupId>fr.gaellalire</groupId>
           <artifactId>jar_exploder_plugin</artifactId>
-          <version>1.0.2-SNAPSHOT</version>
+          <version>1.0.2</version>
         </plugin>
         <plugin>
           <groupId>fr.gaellalire.vestige</groupId>
           <artifactId>vestige.plugin.verify</artifactId>
-          <version>1.2.1-SNAPSHOT</version>
+          <version>1.3.0</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -50,4 +50,30 @@
       </build>
     </profile>
   </profiles>
+  <scm>
+    <connection>scm:git:git@gaellalire.fr:vestige_app/myeeapps.git</connection>
+    <developerConnection>scm:git:git@gaellalire.fr:vestige_app/myeeapps.git</developerConnection>
+  </scm>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>gaellalire_nexus</id>
+      <url>https://gaellalire.fr/nexus/content/repositories/releases</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+  <distributionManagement>
+    <repository>
+      <id>gaellalire_nexus</id>
+      <url>http://gaellalire.fr/nexus/content/repositories/releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>gaellalire_nexus</id>
+      <url>http://gaellalire.fr/nexus/content/repositories/snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
 </project>
