@@ -3,7 +3,7 @@
   <parent>
     <groupId>fr.gaellalire.vestige_app.myeeapps</groupId>
     <artifactId>myeeapps</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>myeeapps-war1</artifactId>
   <packaging>war</packaging>
